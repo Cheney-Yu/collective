@@ -52,23 +52,71 @@
 > Including Shadowsocks , V2Ray , Trojan , Trojan-Go, WireGuard
 
 #### Shadowsocks
-Shadowsocks 采用的是秋水逸冰（@teddysun）的[脚本](https://github.com/teddysun/shadowsocks_install/tree/master)
+Shadowsocks 采用的是秋水逸冰（@teddysun）的[Shadowsocks安装脚本](https://github.com/teddysun/shadowsocks_install/tree/master)
+
 **内存空间较为充裕的VPS建议使用Shadowsocks-4in1脚本**
+
+    wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh
+    chmod +x shadowsocks-all.sh
+    ./shadowsocks-all.sh 2>&1 | tee shadowsocks-all.log
+
 **内存较小的VPS建议使用Shadowsocks-libev脚本**
+
+Debian系统
+
+    wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev-debian.sh
+    chmod +x shadowsocks-libev-debian.sh
+    ./shadowsocks-libev-debian.sh 2>&1 | tee shadowsocks-libev-debian.log
+
+其它系统
+
+    wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev.sh
+    chmod +x shadowsocks-libev.sh
+    ./shadowsocks-libev.sh 2>&1 | tee shadowsocks-libev.log
+
+
 **有多端口需求建议使用Shadowsocks-python**
 
+
 #### V2Ray
-Shadowsocks 采用的是秋水逸冰（@teddysun）的[脚本](https://github.com/teddysun/shadowsocks_install/tree/master)
-**内存空间较为充裕的VPS建议使用Shadowsocks-4in1脚本**
-**内存较小的VPS建议使用Shadowsocks-libev脚本**
-**有多端口需求建议使用Shadowsocks-python**
+
+
 
 #### Trojan
 Trojan 采用的是Jrohy（@Jrohy）的[带有Web管理界面的脚本](https://github.com/Jrohy/trojan)
 需提前将IP地址解析到域名
-**内存空间较为充裕的VPS建议使用Shadowsocks-4in1脚本**
-**内存较小的VPS建议使用Shadowsocks-libev脚本**
-**有多端口需求建议使用Shadowsocks-python**
+#####  a. 一键脚本安装
+```
+#安装/更新
+source <(curl -sL https://git.io/trojan-install)
+
+#卸载
+source <(curl -sL https://git.io/trojan-install) --remove
+
+```
+安装完后输入'trojan'可进入管理程序   
+浏览器访问 https://域名 可在线web页面管理trojan用户  
+前端页面源码地址: [trojan-web](https://github.com/Jrohy/trojan-web)
+
+##### b. docker运行
+1. 安装mysql  
+因为mariadb内存使用比mysql至少减少一半, 所以推荐使用mariadb数据库
+```
+docker run --name trojan-mariadb --restart=always -p 3306:3306 -v /home/mariadb:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=trojan -e MYSQL_ROOT_HOST=% -e MYSQL_DATABASE=trojan -d mariadb:10.2
+```
+端口和root密码以及持久化目录都可以改成其他的
+
+2. 安装trojan
+```
+docker run -it -d --name trojan --net=host --restart=always --privileged jrohy/trojan init
+```
+运行完后进入容器 `docker exec -it trojan bash`, 然后输入'trojan'即可进行初始化安装   
+
+ 启动web服务: `systemctl start trojan-web`   
+
+ 设置自启动: `systemctl enable trojan-web`
+
+ 更新管理程序: `source <(curl -sL https://git.io/trojan-install)`
 
 #### Trojan-GO
 Shadowsocks 采用的是秋水逸冰（@teddysun）的[脚本](https://github.com/teddysun/shadowsocks_install/tree/master)
