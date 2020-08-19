@@ -308,7 +308,7 @@ Special Thanks:
 
 ### **VPS加速**
 
-> Including BBR , BBR-ALL
+> Including BBR , BBR-ALL(teddysun) , BBR-Plus(CentOS) , Linux-NetSpeed(chiakge)
     
     
 - #### **BBR Original**     
