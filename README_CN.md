@@ -109,7 +109,8 @@ Special Thanks:
 		```
 
 	- ##### 有多端口需求建议使用
-	
+	```
+	```
 		
 	Shadowsocks搭建建议[使用AEAD加密](https://zhuanlan.zhihu.com/p/28566058) 如    
 	>    AES-128-GCM    
@@ -145,6 +146,7 @@ Special Thanks:
 		V2ray 客户端配置: `~/v2ray_info.inf`    
 		Nginx 目录：`/etc/nginx`    
 		证书文件:`/data/v2ray.key`和`/data/v2ray.crt`请注意证书权限设置
+	
 	
 	
 	- ##### [带有多用户管理的multi-v2ray版本](https://github.com/Jrohy/multi-v2ray)    
@@ -190,6 +192,7 @@ Special Thanks:
 		```
 	
 	
+	
 - #### **Trojan**
 	Trojan 采用的是Jrohy（@Jrohy）的[带有Web管理界面的脚本](https://github.com/Jrohy/trojan)    
 	需提前将IP地址解析到域名
@@ -201,8 +204,8 @@ Special Thanks:
 
 	#卸载
 	source <(curl -sL https://git.io/trojan-install) --remove
-
 	```
+	
 	安装完后输入'trojan'可进入管理程序   
 	浏览器访问 https://域名 可在线web页面管理trojan用户  
 	前端页面源码地址: [trojan-web](https://github.com/Jrohy/trojan-web)
