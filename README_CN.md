@@ -66,6 +66,7 @@ Port 端口
 如果提示`Package not found`,输入`apt update`先更新系统再安装
 其它系统（CentOS）的fail2ban安装和fail2ban管理，请参照[fail2ban](https://github.com/fail2ban/fail2ban)
 
+----
 ### 代理
 > Including Shadowsocks , V2Ray , Trojan , Trojan-Go, WireGuard
 
@@ -128,12 +129,9 @@ source <(curl -sL https://git.io/trojan-install) --remove
 **gost的安装**
 ```bash
 # Debian和Ubuntu系统下安装wget
-  apt-get install wget
+apt-get update -y && apt-get install wget -y
 # CentOS系统下安装wget
-  yum install wget
-# 如果失败可以先更新系统
-#   apt update
-#   yum update
+yum update -y && yum install wget -y
 ```
 ```bash
 wget -N --no-check-certificate https://github.com/ginuerzh/gost/releases/download/v2.11.1/gost-linux-amd64-2.11.1.gz && gzip -d gost-linux-amd64-2.11.1.gz
@@ -145,7 +143,7 @@ chmod +x gost
 ```bash
 ./gost -L 用户名:密码@:端口 socks5+tls://:端口
 ```
-
+----
 ### 中转（NAT机）
 > Including gost , ufw , HaProxy
 
@@ -158,12 +156,9 @@ gost[脚本地址](https://github.com/ginuerzh/gost)
 **gost的安装**
 ```bash
 # Debian和Ubuntu系统下安装wget
-  apt-get install wget
+apt-get update -y && apt-get install wget -y
 # CentOS系统下安装wget
-  yum install wget
-# 如果失败可以先更新系统
-#   apt update
-#   yum update
+yum update -y && yum install wget -y
 ```
 ```bash
 wget -N --no-check-certificate https://github.com/ginuerzh/gost/releases/download/v2.11.1/gost-linux-amd64-2.11.1.gz && gzip -d gost-linux-amd64-2.11.1.gz
@@ -177,13 +172,13 @@ chmod +x gost
 Ubuntu系统下默认已安装ufw
 ```bash
 # Debian系统下安装ufw
-  apt-get install ufw
+apt-get update -y && apt-get install ufw -y
 ```
 
 #### HaProxy
 
 
-
+----
 ### VPS加速
 > Including BBR
 
@@ -206,7 +201,7 @@ sysctl net.ipv4.tcp_congestion_control
 ```bash
 lsmod | grep bbr
 ```
-
+----
 ### OpenVZ Nat
 > Including BBR Plus, V2Ray
 
