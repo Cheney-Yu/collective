@@ -260,7 +260,7 @@ lsmod | grep bbr
 > Including BBR Plus, V2Ray
 
     
-#### - BBR Plus（OpenVZ）
+- #### BBR Plus（OpenVZ）
 OpenVZ下的BBR-Plus采用的是mzz2017（@mzz2017）的[OpenVZ下开启BBR Plus的脚本](https://github.com/mzz2017/lkl-haproxy)
 
 `lkl` mode via `haproxy`, works for `OpenVZ` virtualization.
@@ -280,7 +280,7 @@ bash <(curl -Ls https://github.com/mzz2017/lkl-haproxy/raw/master/lkl-haproxy-de
 
 
     
-#### - V2Ray
+- #### V2Ray
 OpenVZ下的V2Ray采用的是233boy（@233boy）的[V2Ray一键安装脚本](https://github.com/233boy/v2ray/wiki/V2Ray一键安装脚本)     
 使用 root 用户输入下面命令安装或卸载
 ```
