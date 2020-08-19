@@ -30,6 +30,7 @@ Special Thanks:
 
 + [加速](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#VPS加速)
     + [BBR](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#bbr-original)
+    + [BBR脚本](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#bbr-all)
 
 + [OpenVZ NAT](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#openvz-nat)
     + [bbr plus(OpenVZ)](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#bbr-plusopenvz)
@@ -81,7 +82,7 @@ Special Thanks:
 
     
 - #### **Shadowsocks**
-	Shadowsocks 采用的是秋水逸冰（@teddysun）的[Shadowsocks安装脚本](https://github.com/teddysun/shadowsocks_install/tree/master)
+	Shadowsocks 采用的是teddysun（@teddysun）的[Shadowsocks安装脚本](https://github.com/teddysun/shadowsocks_install/tree/master)
 
 	##### 内存空间较为充裕的VPS建议使用Shadowsocks-4in1脚本[参考](https://github.com/ishen7/Blog/issues/2)
 	```bash
@@ -150,7 +151,7 @@ Special Thanks:
 	```
 		
 - #### **WireGuard**
-	[参考资料](https://teddysun.com/554.html)    
+	[来自于teddysun的WireGuard一键安装脚本](https://teddysun.com/554.html)    
 	系统支持：CentOS 7+，Debian 8+，Raspbian 10，Ubuntu 16+，Fedora 29+    
 	内存要求：≥256M    
 	使用 root 用户登录系统，运行以下命令下载脚本，赋予执行权限：    
@@ -305,7 +306,7 @@ Special Thanks:
 
 ### **VPS加速**
 
-> Including BBR
+> Including BBR , BBR-ALL
     
     
 - #### **BBR Original**     
@@ -328,8 +329,49 @@ Special Thanks:
 	lsmod | grep bbr
 	```
 
-
-
+- #### **BBR All**
+	来自[teddysun的多系统bbr加速脚本](https://teddysun.com/489.html)    
+	系统支持：CentOS 6+，Debian 8+，Ubuntu 16+    
+	虚拟技术：OpenVZ 以外的，比如 KVM、Xen、VMware    
+	内存要求：≥128M    
+	
+	使用root用户登录，运行以下命令：
+	```
+	wget --no-check-certificate -O /opt/bbr.sh https://github.com/teddysun/across/raw/master/bbr.sh
+	chmod 755 /opt/bbr.sh
+	/opt/bbr.sh
+	```
+	安装完成后，脚本会提示需要重启 VPS，输入 `y` 并回车后重启。
+	重启完成后，进入 VPS，验证一下是否成功安装最新内核并开启 TCP BBR，输入以下命令：
+	```
+	uname -r
+	```
+	查看内核版本，显示为最新版就表示 OK 了    
+	输入  
+	```
+	sysctl net.ipv4.tcp_available_congestion_control
+	```
+	返回值一般为：
+	`net.ipv4.tcp_available_congestion_control = bbr cubic reno`     
+	或者为：
+	`net.ipv4.tcp_available_congestion_control = reno cubic bbr`    
+	输入    
+	```
+	sysctl net.ipv4.tcp_congestion_control
+	```
+	返回值一般为：
+	`net.ipv4.tcp_congestion_control = bbr`    
+	输入    
+	```
+	sysctl net.core.default_qdisc
+	```
+	返回值一般为：
+	`net.core.default_qdisc = fq`    
+	输入
+	```
+	lsmod | grep bbr
+	```
+	返回值有 `tcp_bbr` 模块即说明 bbr 已启动。注意：并不是所有的 VPS 都会有此返回值，若没有也属正常。    
 
 
  ----
@@ -352,8 +394,7 @@ Special Thanks:
 	bash <(curl -Ls https://github.com/mzz2017/lkl-haproxy/raw/master/lkl-haproxy-centos-nocheckvirt.sh)
 	
 	# for debian
-	bash <(curl -Ls https://github.com/mzz2017/lkl-haproxy/raw/master/lkl-haproxy-debian-nocheckvirt.sh)
-	
+	bash <(curl -Ls https://github.com/mzz2017/lkl-haproxy/raw/master/lkl-haproxy-debian-nocheckvirt.sh)	
 	```
 
 
