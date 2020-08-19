@@ -288,9 +288,9 @@ Special Thanks:
 	其中，`目标地址` 为目标服务器的 IP 地址，`本机内网地址` 为本机在内部局域网的 IP 地址。
 	
 	重启 UFW：
-	```
-	sudo ufw disable && sudo ufw enable
-	```
+	`
+	ufw disable && ufw enable
+	`
 	至此，利用 UFW 设置中转的方法介绍完毕。另可根据使用场景，对目标机的防火墙进行配置，令其只接受来自此 NAT VPS 的流量。
 	
 	
@@ -343,8 +343,7 @@ Special Thanks:
 	
 	`lkl` mode via `haproxy`, works for `OpenVZ` virtualization.
 	
-	##### NOTICE :
-		`TUN/TAP` is needed. `256M free memory` is needed.
+	NOTICE :`TUN/TAP` is needed. `256M free memory` is needed.
 
 	##### Usage
 	
@@ -360,7 +359,7 @@ Special Thanks:
 
     
 - #### **V2Ray**
-	OpenVZ下的V2Ray采用的是233boy（@233boy）的[V2Ray一键安装脚本](https://github.com/233boy/v2ray/wiki/V2Ray一键安装脚本)     
+	OpenVZ 下的 V2Ray 采用的是 233boy（@233boy） 的 [V2Ray 一键安装脚本](https://github.com/233boy/v2ray/wiki/V2Ray一键安装脚本)     
 	使用 root 用户输入下面命令安装或卸载
 	```
 	bash <(curl -s -L https://git.io/v2ray.sh)
