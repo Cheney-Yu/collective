@@ -23,11 +23,11 @@
 
 + [中转(NAT)](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#中转nat机)
     + [gost](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#gost)
-	+ [ufw](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#ufw)
+	+ [UFW](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#ufw)
 	+ [HaProxy](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#haproxy)
 
 + [加速](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#VPS加速)
-    + [bbr](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#bbr-original)
+    + [BBR](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#bbr-original)
 
 + [OpenVZ NAT](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#openvz-nat)
     + [bbr plus(OpenVZ)](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#bbr-plusopenvz)
@@ -208,7 +208,7 @@
 	chmod +x gost
 	```
 
-- #### **ufw**
+- #### **UFW**
 	
 	此方法在 Debian & Ubuntu 下较为简便（Ubuntu 18.04 默认使用 UFW）。    
 	
@@ -225,13 +225,13 @@
 	```
 	修改 `/etc/default/ufw` ：
 	```
-	#/etc/default/ufw
+	# /etc/default/ufw
 	DEFAULT_FORWARD_POLICY="ACCEPT"
 	```
 	修改 `/etc/ufw/before.rules` ：
 	```
 	# 在 *filter 之前添加：
-	'/etc/ufw/before.rules'
+	# /etc/ufw/before.rules
 	
 	# nat table rules
 	*nat
