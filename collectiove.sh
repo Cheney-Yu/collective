@@ -7,28 +7,54 @@ export PATH
 #
 # Copyright (C) 2019-2020 Cheney-Yu <benkabu8875@gmail.com>
 #
-# System Required:  CentOS 6+, Debian7+, Ubuntu12+
+# System Required:  Debian 7+
+# (Most scripts works in Debian System)
+# This is a collection of several useful tools help me in linux
+# learning and other application.
+#
 #
 # Reference URL:
-# ------------------Proxy Script--------------------------
-# Shadowsocks Installation:(Copyright from teddysun)
+# --------------------------------------------------------
+# --------------------Proxy Script------------------------
+# Shadowsocks:(@teddysun)
 # https://github.com/teddysun/shadowsocks_install/tree/master
-# V2ray Installation:
+# V2ray:
 #
-# Trojan Installation:
+# Trojan:(with web Management,@Jrohy)
+# https://github.com/Jrohy/trojan
+# Trojan-Go:(specified Trojan-Go)
 # 
-# Socks5 Proxy Installation(over tls):
+# Wireguard:
 #
-# ------------------Transit Script------------------------
+# Socks5 Proxy(over tls):(with Tool gost)
+# https://github.com/ginuerzh/gost
+#
+# --------------------Transit Script----------------------
 # gost Installation:
-#
-# ---------------Useful Tools Installation----------------
-# gost Installation:
-#
+# https://github.com/ginuerzh/gost
 # ufw Installation:
 #
-# ------------------System Script-------------------------
-# bbr activate:
+#
+# -----------------Accelerate Script----------------------
+# bbr activate:(Debian,Recommanded)
+# /etc/sysctl.conf
+# ---------------Useful Tools Installation----------------
+# gost:
+# https://github.com/ginuerzh/gost
+# ufw:
+# 
+# -------------------System Script------------------------
+# Change SSH Port:
+# /etc/ssh/sshd_config
+# fail2ban:
+# https://github.com/fail2ban/fail2ban
+# 
+# -------------------Specified NAT(OpenVZ)----------------
+# BBR Plus:
+# https://github.com/mzz2017/lkl-haproxy
+# V2ray(233boy):
+# https://github.com/233boy/v2ray/tree/master
+# --------------------------------------------------------
 # --------------------------------------------------------
 #
 # Thanks:
