@@ -52,177 +52,160 @@
 ### **系统安全**
 
 > Including 修改SSH Port，fail2ban
-
-    
-#### 修改SSH Port
-修改`/etc/ssh/sshd_config`，将
-```bash
-#Port 22
-```
-前面的`#`去掉，将22改成想要的端口，或者在下面加多一行
-```bash
-Port 端口
-```
-    
-    
-#### fail2ban 
-在Debian和Ubuntu系统中 输入`apt-get install fail2ban`即可安装fail2ban       
-如果提示`Package not found`,输入`apt update`先更新系统再安装   
-其它系统（CentOS）的fail2ban安装和fail2ban管理，请参照[fail2ban](https://github.com/fail2ban/fail2ban)
-
-
-
-
-
-
+	
+	
+- #### 修改SSH Port
+	修改`/etc/ssh/sshd_config`，将
+	```bash
+	#Port 22
+	```
+	前面的`#`去掉，将22改成想要的端口，或者在下面加多一行
+	```bash
+	Port 端口
+	```
+	
+	
+- #### fail2ban 
+	在Debian和Ubuntu系统中 输入`apt-get install fail2ban`即可安装fail2ban       
+	如果提示`Package not found`,输入`apt update`先更新系统再安装   
+	其它系统（CentOS）的fail2ban安装和fail2ban管理，请参照[fail2ban](https://github.com/fail2ban/fail2ban)
+	
+	
+	
 ----
 ### **代理**
 
 > Including Shadowsocks , V2Ray , Trojan , Trojan-Go, WireGuard
 
     
-#### Shadowsocks
-Shadowsocks 采用的是秋水逸冰（@teddysun）的[Shadowsocks安装脚本](https://github.com/teddysun/shadowsocks_install/tree/master)
+- #### Shadowsocks
+	Shadowsocks 采用的是秋水逸冰（@teddysun）的[Shadowsocks安装脚本](https://github.com/teddysun/shadowsocks_install/tree/master)
 
-**内存空间较为充裕的VPS建议使用Shadowsocks-4in1脚本**
-```bash
-wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh
-chmod +x shadowsocks-all.sh
-./shadowsocks-all.sh 2>&1 | tee shadowsocks-all.log
-```
+	**内存空间较为充裕的VPS建议使用Shadowsocks-4in1脚本**
+	```bash
+	wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh
+	chmod +x shadowsocks-all.sh
+	./shadowsocks-all.sh 2>&1 | tee shadowsocks-all.log
+	```
+
+	**内存较小的VPS建议使用Shadowsocks-libev脚本**
+
+	Debian系统
+	```bash
+	    wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev-debian.sh
+	    chmod +x shadowsocks-libev-debian.sh
+	    ./shadowsocks-libev-debian.sh 2>&1 | tee shadowsocks-libev-debian.log
+	```
+	其它系统
+	```bash
+	    wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev.sh
+	    chmod +x shadowsocks-libev.sh
+	    ./shadowsocks-libev.sh 2>&1 | tee shadowsocks-libev.log
+	```
+
+	**有多端口需求建议使用Shadowsocks-python**
+	
+	
+	
+- #### V2Ray
+	
+	
+	
+	
+	
+	
+- #### Trojan
+	Trojan 采用的是Jrohy（@Jrohy）的[带有Web管理界面的脚本](https://github.com/Jrohy/trojan)    
+	需提前将IP地址解析到域名
+
+	##### 一键脚本安装
+	```bash
+	#安装/更新
+	source <(curl -sL https://git.io/trojan-install)
+
+	#卸载
+	source <(curl -sL https://git.io/trojan-install) --remove
+
+	```
+	安装完后输入'trojan'可进入管理程序   
+	浏览器访问 https://域名 可在线web页面管理trojan用户  
+	前端页面源码地址: [trojan-web](https://github.com/Jrohy/trojan-web)
+	
+	
+- #### Trojan-GO
+	
+	
+	
+	
+- #### WireGuard
+	
+	
+	
     
-**内存较小的VPS建议使用Shadowsocks-libev脚本**
+- #### Socks5 with Tls(Telegram 代理)
+	考虑到很多商家禁止MTProto的搭建和使用，我们的Telegram代理多采用Socks5代理     
+	考虑到安全性，建议的方式是使用[gost](https://github.com/ginuerzh/gost)搭建带有tls的Socks5代理 
 
-Debian系统
-```bash
-    wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev-debian.sh
-    chmod +x shadowsocks-libev-debian.sh
-    ./shadowsocks-libev-debian.sh 2>&1 | tee shadowsocks-libev-debian.log
-```
-其它系统
-```bash
-    wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev.sh
-    chmod +x shadowsocks-libev.sh
-    ./shadowsocks-libev.sh 2>&1 | tee shadowsocks-libev.log
-```
-    
-**有多端口需求建议使用Shadowsocks-python**
+	**gost的安装**     
+	```bash
+	# Debian和Ubuntu系统下安装wget
+	apt-get update -y && apt-get install wget -y
+	# CentOS系统下安装wget
+	yum update -y && yum install wget -y
+	```
+	```bash
+	wget -N --no-check-certificate https://github.com/ginuerzh/gost/releases/download/v2.11.1/gost-linux-amd64-2.11.1.gz && gzip -d gost-linux-amd64-2.11.1.gz
+	mv gost-linux-amd64-2.11.1 gost
+	chmod +x gost
+	```
 
-
-    
-    
-#### V2Ray
-
-
-
-
-    
-#### Trojan
-Trojan 采用的是Jrohy（@Jrohy）的[带有Web管理界面的脚本](https://github.com/Jrohy/trojan)    
-需提前将IP地址解析到域名
-
-##### 一键脚本安装
-```bash
-#安装/更新
-source <(curl -sL https://git.io/trojan-install)
-
-#卸载
-source <(curl -sL https://git.io/trojan-install) --remove
-
-```
-安装完后输入'trojan'可进入管理程序   
-浏览器访问 https://域名 可在线web页面管理trojan用户  
-前端页面源码地址: [trojan-web](https://github.com/Jrohy/trojan-web)
-
-
-    
-    
-#### Trojan-GO
-
-
-
-    
-    
-#### WireGuard
-
-
-
-
-    
-    
-#### Socks5 with Tls(Telegram 代理)
-考虑到很多商家禁止MTProto的搭建和使用，我们的Telegram代理多采用Socks5代理     
-考虑到安全性，建议的方式是使用[gost](https://github.com/ginuerzh/gost)搭建带有tls的Socks5代理 
-
-**gost的安装**     
-```bash
-# Debian和Ubuntu系统下安装wget
-apt-get update -y && apt-get install wget -y
-# CentOS系统下安装wget
-yum update -y && yum install wget -y
-```
-```bash
-wget -N --no-check-certificate https://github.com/ginuerzh/gost/releases/download/v2.11.1/gost-linux-amd64-2.11.1.gz && gzip -d gost-linux-amd64-2.11.1.gz
-mv gost-linux-amd64-2.11.1 gost
-chmod +x gost
-```
-
-**搭建socks5代理**     
-```bash
-./gost -L 用户名:密码@:端口 socks5+tls://:端口
-```
-
-
-
-
-
-
+	**搭建socks5代理**     
+	```bash
+	./gost -L 用户名:密码@:端口 socks5+tls://:端口
+	```
+	
  ----
 ### **中转(NAT机)**
 
 > Including gost , ufw , HaProxy
-    
+	
 *此部分介绍安装方式*     
 参考文章：     
 [利用 NAT VPS 进行流量中转](https://blog.chaos.run/dreams/nat-vps-port-forwarding/)
+	
+- #### gost
+	gost[脚本地址](https://github.com/ginuerzh/gost) 
 
-    
-#### gost
-gost[脚本地址](https://github.com/ginuerzh/gost) 
+	**gost的安装**     
+	```bash
+	# Debian和Ubuntu系统下安装wget
+	apt-get update -y && apt-get install wget -y
+	# CentOS系统下安装wget
+	yum update -y && yum install wget -y
+	```
+	```bash
+	wget -N --no-check-certificate https://github.com/ginuerzh/gost/releases/download/v2.11.1/gost-linux-amd64-2.11.1.gz && gzip -d gost-linux-amd64-2.11.1.gz
+	mv gost-linux-amd64-2.11.1 gost
+	chmod +x gost
+	```
 
-**gost的安装**     
-```bash
-# Debian和Ubuntu系统下安装wget
-apt-get update -y && apt-get install wget -y
-# CentOS系统下安装wget
-yum update -y && yum install wget -y
-```
-```bash
-wget -N --no-check-certificate https://github.com/ginuerzh/gost/releases/download/v2.11.1/gost-linux-amd64-2.11.1.gz && gzip -d gost-linux-amd64-2.11.1.gz
-mv gost-linux-amd64-2.11.1 gost
-chmod +x gost
-```
-
-
-    
-#### ufw
-
-**ufw的安装**     
-Ubuntu系统下默认已安装ufw     
-```bash
-# Debian系统下安装ufw
-apt-get update -y && apt-get install ufw -y
-```
-
-
-    
-#### HaProxy
-
-
-
-
-
-
+- #### ufw
+	
+	**ufw的安装**     
+	Ubuntu系统下默认已安装ufw     
+	```bash
+	# Debian系统下安装ufw
+	apt-get update -y && apt-get install ufw -y
+	```
+	
+	
+- #### HaProxy
+	
+	```
+	```
+	
+	
+	
  ----
 
 ### **VPS加速**
@@ -230,25 +213,25 @@ apt-get update -y && apt-get install ufw -y
 > Including BBR
     
     
-#### BBR Original     
-修改`/etc/sysctl.conf`，在下方加入
-```bash
-net.core.default_qdisc = fq
-net.ipv4.tcp_congestion_control = bbr
-```
-使其生效
-```bash
-sysctl -p
-```
-查看BBR是否开启成功
-执行如下命令，如果返回值中有BBR则说明开启成功
-```bash
-sysctl net.ipv4.tcp_congestion_control
-```
-执行如下命令，如果返回值中有tcp_bbr模块则说明开启成功
-```bash
-lsmod | grep bbr
-```
+- #### BBR Original     
+	修改`/etc/sysctl.conf`，在下方加入
+	```bash
+	net.core.default_qdisc = fq
+	net.ipv4.tcp_congestion_control = bbr
+	```
+	使其生效
+	```bash
+	sysctl -p
+	```
+	查看BBR是否开启成功
+	执行如下命令，如果返回值中有BBR则说明开启成功
+	```bash
+	sysctl net.ipv4.tcp_congestion_control
+	```
+	执行如下命令，如果返回值中有tcp_bbr模块则说明开启成功
+	```bash
+	lsmod | grep bbr
+	```
 
 
 
@@ -269,14 +252,14 @@ lsmod | grep bbr
 
 	##### Usage
 	
-		```bash
-		# for centos
-		bash <(curl -Ls https://github.com/mzz2017/lkl-haproxy/raw/master/lkl-haproxy-centos-nocheckvirt.sh)
-		
-		# for debian
-		bash <(curl -Ls https://github.com/mzz2017/lkl-haproxy/raw/master/lkl-haproxy-debian-nocheckvirt.sh)
-		
-		```
+	```bash
+	# for centos
+	bash <(curl -Ls https://github.com/mzz2017/lkl-haproxy/raw/master/lkl-haproxy-centos-nocheckvirt.sh)
+	
+	# for debian
+	bash <(curl -Ls https://github.com/mzz2017/lkl-haproxy/raw/master/lkl-haproxy-debian-nocheckvirt.sh)
+	
+	```
 
 
     
