@@ -174,8 +174,11 @@
 > Including gost , ufw , HaProxy
 	
 *此部分介绍安装方式*     
+	
+	
 参考文章：     
 [利用 NAT VPS 进行流量中转](https://blog.chaos.run/dreams/nat-vps-port-forwarding/)
+	
 	
 - #### **gost**
 	[gost脚本地址](https://github.com/ginuerzh/gost) 
