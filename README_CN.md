@@ -169,17 +169,15 @@ Special Thanks:
 	/opt/wireguard.sh -r
 	```
 	    
-	安装完成后，脚本提示如下
-	```
-	WireGuard VPN Server installation completed
+	安装完成后，脚本提示如下	
+	`WireGuard VPN Server installation completed
 	WireGuard VPN default client file is below:
 	/etc/wireguard/wg0_client
 	WireGuard VPN default client QR Code is below:
 	/etc/wireguard/wg0_client.png
 	Download and scan this QR Code with your phone
 	Welcome to visit: https://teddysun.com/554.html
-	Enjoy it
-	```
+	Enjoy it`
 	
 	查看已安装 WireGuard 版本号    
 	`/opt/wireguard.sh -v`    
@@ -269,7 +267,7 @@ Special Thanks:
 	修改 `/etc/ufw/before.rules` ：
 	```
 	# 在 *filter 之前添加：
-	` /etc/ufw/before.rules `
+	# /etc/ufw/before.rules 
 	
 	# nat table rules
 	*nat
