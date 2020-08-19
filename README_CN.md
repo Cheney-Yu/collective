@@ -3,7 +3,9 @@
 **记录我在VPS研究过程中所使用到的一些工具**
 
 目标是集成一个install.sh程序，通过选择数字规避输入代码部分（懒）    
-现阶段先将使用到的工具先记录下来，方便使用
+现阶段先将使用到的工具先记录下来，方便使用    
+Special Thanks:    
+	teddysun(https://teddysun.com/category/tech)
 
 ## 目录
 
@@ -148,9 +150,45 @@
 	```
 		
 - #### **WireGuard**
+	[参考资料](https://teddysun.com/554.html)    
+	系统支持：CentOS 7+，Debian 8+，Raspbian 10，Ubuntu 16+，Fedora 29+    
+	内存要求：≥256M    
+	使用 root 用户登录系统，运行以下命令下载脚本，赋予执行权限：    
+	```
+	wget --no-check-certificate -O /opt/wireguard.sh https://raw.githubusercontent.com/teddysun/across/master/wireguard.sh
+	chmod 755 /opt/wireguard.sh
+	```
+	    
+	    
+	从代码编译安装 WireGuard
+	```
+	/opt/wireguard.sh -s
+	```
+	从 repository 直接安装 WireGuard
+	```
+	/opt/wireguard.sh -r
+	```
+	    
+	安装完成后，脚本提示如下
+	```
+	WireGuard VPN Server installation completed
+	WireGuard VPN default client file is below:
+	/etc/wireguard/wg0_client
+	WireGuard VPN default client QR Code is below:
+	/etc/wireguard/wg0_client.png
+	Download and scan this QR Code with your phone
+	Welcome to visit: https://teddysun.com/554.html
+	Enjoy it
+	```
 	
-	```
-	```
+	查看已安装 WireGuard 版本号    
+	`/opt/wireguard.sh -v`    
+	编译升级 WireGuard 到当前最新版本    
+	`/opt/wireguard.sh -u`    
+	新增 WireGuard 客户端配置    
+	`/opt/wireguard.sh -a`    
+	列出 WireGuard 客户端配置    
+	`/opt/wireguard.sh -l`    
 	
 	
 - #### **Socks5 with Tls(Telegram 代理)**
@@ -231,7 +269,7 @@
 	修改 `/etc/ufw/before.rules` ：
 	```
 	# 在 *filter 之前添加：
-	# /etc/ufw/before.rules
+	` /etc/ufw/before.rules `
 	
 	# nat table rules
 	*nat
