@@ -48,8 +48,10 @@
 
 ## 直接键入型使用
 
+
 ### **系统安全**
 > Including 修改SSH Port，fail2ban
+
 
 #### 修改SSH Port
 修改`/etc/ssh/sshd_config`，将
@@ -61,14 +63,20 @@
 Port 端口
 ```
 
+
 #### fail2ban 
 在Debian和Ubuntu系统中 输入`apt-get install fail2ban`即可安装fail2ban       
 如果提示`Package not found`,输入`apt update`先更新系统再安装   
 其它系统（CentOS）的fail2ban安装和fail2ban管理，请参照[fail2ban](https://github.com/fail2ban/fail2ban)
 
+
+
+
+
 ----
 ### **代理**
 > Including Shadowsocks , V2Ray , Trojan , Trojan-Go, WireGuard
+
 
 #### Shadowsocks
 Shadowsocks 采用的是秋水逸冰（@teddysun）的[Shadowsocks安装脚本](https://github.com/teddysun/shadowsocks_install/tree/master)
@@ -98,13 +106,18 @@ Debian系统
 **有多端口需求建议使用Shadowsocks-python**
 
 
+
+
 #### V2Ray
+
+
 
 
 
 #### Trojan
 Trojan 采用的是Jrohy（@Jrohy）的[带有Web管理界面的脚本](https://github.com/Jrohy/trojan)    
 需提前将IP地址解析到域名
+
 ##### 一键脚本安装
 ```bash
 #安装/更新
@@ -118,14 +131,23 @@ source <(curl -sL https://git.io/trojan-install) --remove
 浏览器访问 https://域名 可在线web页面管理trojan用户  
 前端页面源码地址: [trojan-web](https://github.com/Jrohy/trojan-web)
 
+
+
 #### Trojan-GO
+
+
 
 
 #### WireGuard
 
+
+
+
+
 #### Socks5 with Tls(Telegram 代理)
 考虑到很多商家禁止MTProto的搭建和使用，我们的Telegram代理多采用Socks5代理     
-考虑到安全性，建议的方式是使用[gost](https://github.com/ginuerzh/gost)搭建带有tls的Socks5代理     
+考虑到安全性，建议的方式是使用[gost](https://github.com/ginuerzh/gost)搭建带有tls的Socks5代理 
+
 **gost的安装**     
 ```bash
 # Debian和Ubuntu系统下安装wget
@@ -143,6 +165,11 @@ chmod +x gost
 ```bash
 ./gost -L 用户名:密码@:端口 socks5+tls://:端口
 ```
+
+
+
+
+
 ----
 ### **中转(NAT机)**
 > Including gost , ufw , HaProxy
@@ -151,8 +178,10 @@ chmod +x gost
 参考文章：     
 [利用 NAT VPS 进行流量中转](https://blog.chaos.run/dreams/nat-vps-port-forwarding/)
 
+
 #### gost
-gost[脚本地址](https://github.com/ginuerzh/gost)     
+gost[脚本地址](https://github.com/ginuerzh/gost) 
+
 **gost的安装**     
 ```bash
 # Debian和Ubuntu系统下安装wget
@@ -166,6 +195,8 @@ mv gost-linux-amd64-2.11.1 gost
 chmod +x gost
 ```
 
+
+
 #### ufw
 
 **ufw的安装**     
@@ -175,12 +206,19 @@ Ubuntu系统下默认已安装ufw
 apt-get update -y && apt-get install ufw -y
 ```
 
+
+
 #### HaProxy
+
+
+
+
 
 
 ----
 ### **VPS加速**
 > Including BBR
+
 
 #### BBR Original     
 修改`/etc/sysctl.conf`，在下方加入
@@ -201,9 +239,16 @@ sysctl net.ipv4.tcp_congestion_control
 ```bash
 lsmod | grep bbr
 ```
+
+
+
+
+
+
 ----
 ### **OpenVZ NAT**
 > Including BBR Plus, V2Ray
+
 
 #### BBR Plus（OpenVZ）
 OpenVZ下的BBR-Plus采用的是mzz2017（@mzz2017）的[OpenVZ下开启BBR Plus的脚本](https://github.com/mzz2017/lkl-haproxy)
@@ -222,6 +267,9 @@ bash <(curl -Ls https://github.com/mzz2017/lkl-haproxy/raw/master/lkl-haproxy-ce
 bash <(curl -Ls https://github.com/mzz2017/lkl-haproxy/raw/master/lkl-haproxy-debian-nocheckvirt.sh)
 
 ```
+
+
+
 #### V2Ray
 OpenVZ下的V2Ray采用的是233boy（@233boy）的[V2Ray一键安装脚本](https://github.com/233boy/v2ray/wiki/V2Ray一键安装脚本)     
 使用 root 用户输入下面命令安装或卸载
