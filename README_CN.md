@@ -124,9 +124,9 @@ source <(curl -sL https://git.io/trojan-install) --remove
 #### WireGuard
 
 #### Socks5 with Tls(Telegram 代理)
-考虑到很多商家禁止MTProto的搭建和使用，我们的Telegram代理多采用Socks5代理
-考虑到安全性，建议的方式是使用[gost](https://github.com/ginuerzh/gost)搭建带有tls的Socks5代理
-**gost的安装**
+考虑到很多商家禁止MTProto的搭建和使用，我们的Telegram代理多采用Socks5代理     
+考虑到安全性，建议的方式是使用[gost](https://github.com/ginuerzh/gost)搭建带有tls的Socks5代理     
+**gost的安装**     
 ```bash
 # Debian和Ubuntu系统下安装wget
 apt-get update -y && apt-get install wget -y
@@ -139,7 +139,7 @@ mv gost-linux-amd64-2.11.1 gost
 chmod +x gost
 ```
 
-**搭建socks5代理**
+**搭建socks5代理**     
 ```bash
 ./gost -L 用户名:密码@:端口 socks5+tls://:端口
 ```
@@ -147,13 +147,13 @@ chmod +x gost
 ### **中转(NAT机)**
 > Including gost , ufw , HaProxy
 
-*此部分介绍安装方式*
-参考文章：
+*此部分介绍安装方式*     
+参考文章：     
 [利用 NAT VPS 进行流量中转](https://blog.chaos.run/dreams/nat-vps-port-forwarding/)
 
 #### gost
-gost[脚本地址](https://github.com/ginuerzh/gost)
-**gost的安装**
+gost[脚本地址](https://github.com/ginuerzh/gost)     
+**gost的安装**     
 ```bash
 # Debian和Ubuntu系统下安装wget
 apt-get update -y && apt-get install wget -y
@@ -168,8 +168,8 @@ chmod +x gost
 
 #### ufw
 
-**ufw的安装**
-Ubuntu系统下默认已安装ufw
+**ufw的安装**     
+Ubuntu系统下默认已安装ufw     
 ```bash
 # Debian系统下安装ufw
 apt-get update -y && apt-get install ufw -y
@@ -182,11 +182,11 @@ apt-get update -y && apt-get install ufw -y
 ### **VPS加速**
 > Including BBR
 
-#### BBR Original
+#### BBR Original     
 修改`/etc/sysctl.conf`，在下方加入
 ```bash
-net.core.default_qdisc=fq
-net.ipv4.tcp_congestion_control=bbr
+net.core.default_qdisc = fq
+net.ipv4.tcp_congestion_control = bbr
 ```
 使其生效
 ```bash
@@ -223,7 +223,7 @@ bash <(curl -Ls https://github.com/mzz2017/lkl-haproxy/raw/master/lkl-haproxy-de
 
 ```
 #### V2Ray
-OpenVZ下的V2Ray采用的是233boy（@233boy）的[V2Ray一键安装脚本](https://github.com/233boy/v2ray/wiki/V2Ray一键安装脚本)
+OpenVZ下的V2Ray采用的是233boy（@233boy）的[V2Ray一键安装脚本](https://github.com/233boy/v2ray/wiki/V2Ray一键安装脚本)     
 使用 root 用户输入下面命令安装或卸载
 ```
 bash <(curl -s -L https://git.io/v2ray.sh)
@@ -233,5 +233,5 @@ ubuntu/debian 系统安装 Curl 方法: `apt-get update -y && apt-get install cu
 centos 系统安装 Curl 方法: `yum update -y && yum install curl -y`    
 安装好 curl 之后就能安装脚本了
 
-备注：安装完成后，输入 v2ray 即可管理 V2Ray
+备注：安装完成后，输入 v2ray 即可管理 V2Ray     
 如果提示你的系统不支持此脚本，那么请尝试更换系统
