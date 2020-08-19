@@ -156,23 +156,23 @@ Special Thanks:
 	系统支持：CentOS 7+，Debian 8+，Raspbian 10，Ubuntu 16+，Fedora 29+    
 	内存要求：≥256M    
 	使用 root 用户登录系统，运行以下命令下载脚本，赋予执行权限：    
-	```
+	```bash
 	wget --no-check-certificate -O /opt/wireguard.sh https://raw.githubusercontent.com/teddysun/across/master/wireguard.sh
 	chmod 755 /opt/wireguard.sh
 	```
 	    
 	    
 	从代码编译安装 WireGuard
-	```
+	```bash
 	/opt/wireguard.sh -s
 	```
 	从 repository 直接安装 WireGuard
-	```
+	```bash
 	/opt/wireguard.sh -r
 	```
 	    
 	安装完成后，脚本提示如下    	
-	```
+	```bash
 	WireGuard VPN Server installation completed    
 	WireGuard VPN default client file is below:    
 	/etc/wireguard/wg0_client    
@@ -259,17 +259,17 @@ Special Thanks:
 
 	首先要修改 `/etc/sysctl.conf` 文件：
 	
-	```
+	```bash
 	echo "net.ipv4.ip_forward = 1" | tee -a /etc/sysctl.conf
 	sysctl -p
 	```
 	修改 `/etc/default/ufw` ：
-	```
+	```bash
 	# /etc/default/ufw
 	DEFAULT_FORWARD_POLICY="ACCEPT"
 	```
 	修改 `/etc/ufw/before.rules` ：
-	```
+	```bash
 	# 在 *filter 之前添加：
 	# /etc/ufw/before.rules 
 	
@@ -337,19 +337,19 @@ Special Thanks:
 	内存要求：≥128M    
 	
 	使用root用户登录，运行以下命令：
-	```
+	```bash
 	wget --no-check-certificate -O /opt/bbr.sh https://github.com/teddysun/across/raw/master/bbr.sh
 	chmod 755 /opt/bbr.sh
 	/opt/bbr.sh
 	```
 	安装完成后，脚本会提示需要重启 VPS，输入 `y` 并回车后重启。
 	重启完成后，进入 VPS，验证一下是否成功安装最新内核并开启 TCP BBR，输入以下命令：
-	```
+	```bash
 	uname -r
 	```
 	查看内核版本，显示为最新版就表示 OK 了    
 	输入  
-	```
+	```bash
 	sysctl net.ipv4.tcp_available_congestion_control
 	```
 	返回值一般为：
@@ -357,19 +357,19 @@ Special Thanks:
 	或者为：
 	`net.ipv4.tcp_available_congestion_control = reno cubic bbr`    
 	输入    
-	```
+	```bash
 	sysctl net.ipv4.tcp_congestion_control
 	```
 	返回值一般为：
 	`net.ipv4.tcp_congestion_control = bbr`    
 	输入    
-	```
+	```bash
 	sysctl net.core.default_qdisc
 	```
 	返回值一般为：
 	`net.core.default_qdisc = fq`    
 	输入
-	```
+	```bash
 	lsmod | grep bbr
 	```
 	返回值有 `tcp_bbr` 模块即说明 bbr 已启动。注意：并不是所有的 VPS 都会有此返回值，若没有也属正常。    
@@ -378,16 +378,16 @@ Special Thanks:
 	
 - #### **BBR (Chiakge)**    
 
-	##### CentOS 系统  
-	```
+	##### [CentOS 系统 ](https://github.com/cx9208/bbrplus) 
+	```bash
 	wget "https://github.com/cx9208/bbrplus/raw/master/ok_bbrplus_centos.sh" && chmod +x ok_bbrplus_centos.sh && ./ok_bbrplus_centos.sh
-	```	
+	```    
 	安装后，执行`uname -r`，显示`4.14.129-bbrplus`则切换内核成功
 	执行```lsmod | grep bbr```，显示有`bbrplus`则开启成功    
 	
 	
-	##### Linux-NetSpeed
-	```
+	##### [Linux-NetSpeed](https://github.com/chiakge/Linux-NetSpeed)
+	```bash
 	wget -N --no-check-certificate "https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh"
 	chmod +x tcp.sh
 	./tcp.sh
@@ -424,7 +424,7 @@ Special Thanks:
 - #### **V2Ray**
 	OpenVZ 下的 V2Ray 采用的是 233boy（@233boy） 的 [V2Ray 一键安装脚本](https://github.com/233boy/v2ray/wiki/V2Ray一键安装脚本)     
 	使用 root 用户输入下面命令安装或卸载
-	```
+	```bash
 	bash <(curl -s -L https://git.io/v2ray.sh)
 	```
 	> 如果提示 curl: command not found ，那是因为你的 VPS 没装 Curl    
