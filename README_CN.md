@@ -376,13 +376,15 @@ Special Thanks:
 	
 	
 	
-- #### **BBR(Chiakge)**    
+- #### **BBR (Chiakge)**    
+
 	##### CentOS 系统  
 	```
 	wget "https://github.com/cx9208/bbrplus/raw/master/ok_bbrplus_centos.sh" && chmod +x ok_bbrplus_centos.sh && ./ok_bbrplus_centos.sh
 	```	
 	安装后，执行`uname -r`，显示`4.14.129-bbrplus`则切换内核成功
 	执行```lsmod | grep bbr```，显示有`bbrplus`则开启成功    
+	
 	
 	##### Linux-NetSpeed
 	```
@@ -391,6 +393,8 @@ Special Thanks:
 	./tcp.sh
 	```
 	> 注意：在实际运行中发现运行该脚本时会有CPU占用达到10%-20%的情况 原因不明 请视情况选取合适加速方式
+	
+	
 
  ----
 ### **OpenVZ NAT**
