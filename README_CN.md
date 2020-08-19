@@ -170,14 +170,14 @@ Special Thanks:
 	```
 	    
 	安装完成后，脚本提示如下	
-	`WireGuard VPN Server installation completed
-	WireGuard VPN default client file is below:
-	/etc/wireguard/wg0_client
-	WireGuard VPN default client QR Code is below:
-	/etc/wireguard/wg0_client.png
-	Download and scan this QR Code with your phone
-	Welcome to visit: https://teddysun.com/554.html
-	Enjoy it`
+	`WireGuard VPN Server installation completed    
+	WireGuard VPN default client file is below:    
+	/etc/wireguard/wg0_client    
+	WireGuard VPN default client QR Code is below:    
+	/etc/wireguard/wg0_client.png    
+	Download and scan this QR Code with your phone    
+	Welcome to visit: https://teddysun.com/554.html    
+	Enjoy it`    
 	
 	查看已安装 WireGuard 版本号    
 	`/opt/wireguard.sh -v`    
