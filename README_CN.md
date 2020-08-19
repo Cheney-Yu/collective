@@ -176,6 +176,7 @@
 	```bash
 	./gost -L 用户名:密码@:端口 socks5+tls://:端口
 	```
+	其中，`用户名` `密码`为所搭建的socks5代理的用户名和密码，`端口` 为搭建的socks5代理监听的端口
 	
  ----
 ### **中转(NAT机)**
@@ -209,12 +210,50 @@
 
 - #### **ufw**
 	
-	ufw的安装       
-	Ubuntu系统下默认已安装ufw     
+	此方法在 Debian & Ubuntu 下较为简便（Ubuntu 18.04 默认使用 UFW）。    
+	
 	```bash
 	# Debian系统下安装ufw
 	apt-get update -y && apt-get install ufw -y
 	```
+
+	首先要修改 `/etc/sysctl.conf` 文件：
+	
+	```
+	echo "net.ipv4.ip_forward = 1" | tee -a /etc/sysctl.conf
+	sysctl -p
+	```
+	修改 `/etc/default/ufw` ：
+	```
+	#/etc/default/ufw
+	DEFAULT_FORWARD_POLICY="ACCEPT"
+	```
+	修改 `/etc/ufw/before.rules` ：
+	```
+	# 在 *filter 之前添加：
+	'/etc/ufw/before.rules'
+	
+	# nat table rules
+	*nat
+	:PREROUTING ACCEPT [0:0]
+	:POSTROUTING ACCEPT [0:0]
+
+	# port forwarding
+	-A PREROUTING -p tcp --dport 本机端口号 -j DNAT --to-destination 目标地址:目标端口号
+	-A PREROUTING -p udp --dport 本机端口号 -j DNAT --to-destination 目标地址:目标端口号
+	-A POSTROUTING -p tcp -d 目标地址 --dport 目标端口号 -j SNAT --to-source 本机内网地址
+	-A POSTROUTING -p udp -d 目标地址 --dport 目标端口号 -j SNAT --to-source 本机内网地址
+
+	# commit to apply changes
+	COMMIT
+	```
+	其中，`目标地址` 为目标服务器的 IP 地址，`本机内网地址` 为本机在内部局域网的 IP 地址。
+	
+	重启 UFW：
+	```
+	sudo ufw disable && sudo ufw enable
+	```
+	至此，利用 UFW 设置中转的方法介绍完毕。另可根据使用场景，对目标机的防火墙进行配置，令其只接受来自此 NAT VPS 的流量。
 	
 	
 - #### **HaProxy**
