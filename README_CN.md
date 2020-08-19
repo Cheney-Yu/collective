@@ -3,7 +3,7 @@
 **记录我在VPS研究过程中所使用到的一些工具**
 
 目标是集成一个install.sh程序，通过选择数字规避输入代码部分（懒）
-
+现阶段先将使用到的工具先记录下来，方便使用
 
 ## 目录
 
@@ -15,23 +15,23 @@
 	+ [Trojan](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#Trojan)
 	+ [Trojan-Go](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#Trojan-Go)
 	+ [Wireguard](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#Wireguard)
-	+ [Socks5 with tls(telegram)](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#)
+	+ [Socks5 with tls(telegram)](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#socks5-with-tlstelegram-代理)
 
-+ [中转(NAT)](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#)
-    + [gost](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#)
-	+ [ufw](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#)
-	+ [HaProxy](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#)
++ [中转(NAT)](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#中转nat机)
+    + [gost](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#gost)
+	+ [ufw](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#ufw)
+	+ [HaProxy](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#haproxy)
 
-+ [加速](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#)
-    + [bbr](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#)
++ [加速](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#VPS加速)
+    + [bbr](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#bbr-original)
 
-+ [系统安全](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#)
-    + [change SSH port](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#)
-	+ [fail2ban](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#)
++ [系统安全](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#系统安全)
+    + [change SSH port](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#修改ssh-port)
+	+ [fail2ban](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#fail2ban)
 
-+ [OpenVZ NAT](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#)
-    + [bbr plus(OpenVZ)](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#)
-	+ [V2Ray](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#)
++ [OpenVZ NAT](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#openvz-nat)
+    + [bbr plus(OpenVZ)](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#bbr-plusopenvz)
+	+ [V2Ray](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#v2ray-1)
 
 ### 计划中
 
@@ -64,7 +64,8 @@ Shadowsocks 采用的是秋水逸冰（@teddysun）的[脚本](https://github.co
 **有多端口需求建议使用Shadowsocks-python**
 
 #### Trojan
-Shadowsocks 采用的是秋水逸冰（@teddysun）的[脚本](https://github.com/teddysun/shadowsocks_install/tree/master)
+Trojan 采用的是Jrohy（@Jrohy）的[带有Web管理界面的脚本](https://github.com/Jrohy/trojan)
+需提前将IP地址解析到域名
 **内存空间较为充裕的VPS建议使用Shadowsocks-4in1脚本**
 **内存较小的VPS建议使用Shadowsocks-libev脚本**
 **有多端口需求建议使用Shadowsocks-python**
@@ -82,7 +83,7 @@ Shadowsocks 采用的是秋水逸冰（@teddysun）的[脚本](https://github.co
 **有多端口需求建议使用Shadowsocks-python**
 
 #### Socks5 with Tls(Telegram 代理)
-Shadowsocks 采用的是秋水逸冰（@teddysun）的[脚本](https://github.com/teddysun/shadowsocks_install/tree/master)
+Telegram代理采用的是使用[gost](https://github.com/ginuerzh/gost)搭建带有tls的Socks5代理
 **内存空间较为充裕的VPS建议使用Shadowsocks-4in1脚本**
 **内存较小的VPS建议使用Shadowsocks-libev脚本**
 **有多端口需求建议使用Shadowsocks-python**
@@ -91,9 +92,11 @@ Shadowsocks 采用的是秋水逸冰（@teddysun）的[脚本](https://github.co
 > Including gost , ufw , HaProxy
 
 *此部分介绍安装方式*
+参考文章：
+[利用 NAT VPS 进行流量中转](https://blog.chaos.run/dreams/nat-vps-port-forwarding/)
 
 #### gost
-Shadowsocks 采用的是秋水逸冰（@teddysun）的[脚本](https://github.com/teddysun/shadowsocks_install/tree/master)
+gost[脚本地址](https://github.com/ginuerzh/gost)
 **内存空间较为充裕的VPS建议使用Shadowsocks-4in1脚本**
 **内存较小的VPS建议使用Shadowsocks-libev脚本**
 **有多端口需求建议使用Shadowsocks-python**
@@ -139,13 +142,13 @@ Shadowsocks 采用的是秋水逸冰（@teddysun）的[脚本](https://github.co
 > Including BBR Plus, V2Ray
 
 #### BBR Plus（OpenVZ）
-Shadowsocks 采用的是秋水逸冰（@teddysun）的[脚本](https://github.com/teddysun/shadowsocks_install/tree/master)
+OpenVZ下的BBR-Plus采用的是mzz2017（@mzz2017）的[OpenVZ下开启BBR Plus的脚本](https://github.com/mzz2017/lkl-haproxy)
 **内存空间较为充裕的VPS建议使用Shadowsocks-4in1脚本**
 **内存较小的VPS建议使用Shadowsocks-libev脚本**
 **有多端口需求建议使用Shadowsocks-python**
 
 #### V2Ray
-Shadowsocks 采用的是秋水逸冰（@teddysun）的[脚本](https://github.com/teddysun/shadowsocks_install/tree/master)
+OpenVZ下的V2Ray采用的是233boy（@233boy）的[V2Ray一键安装脚本](https://github.com/233boy/v2ray/wiki/V2Ray一键安装脚本)
 **内存空间较为充裕的VPS建议使用Shadowsocks-4in1脚本**
 **内存较小的VPS建议使用Shadowsocks-libev脚本**
 **有多端口需求建议使用Shadowsocks-python**
