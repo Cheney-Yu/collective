@@ -86,6 +86,7 @@ Special Thanks:
 	Shadowsocks 采用的是teddysun（@teddysun）的[Shadowsocks安装脚本](https://github.com/teddysun/shadowsocks_install/tree/master)
 
 	##### 内存空间较为充裕的VPS建议使用Shadowsocks-4in1脚本[参考](https://github.com/ishen7/Blog/issues/2)
+	
 	```bash
 	wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh
 	chmod +x shadowsocks-all.sh
@@ -96,15 +97,15 @@ Special Thanks:
 
 	Debian系统
 	```bash
-	    wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev-debian.sh
-	    chmod +x shadowsocks-libev-debian.sh
-	    ./shadowsocks-libev-debian.sh 2>&1 | tee shadowsocks-libev-debian.log
+	wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev-debian.sh
+	chmod +x shadowsocks-libev-debian.sh
+	./shadowsocks-libev-debian.sh 2>&1 | tee shadowsocks-libev-debian.log
 	```
 	其它系统
 	```bash
-	    wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev.sh
-	    chmod +x shadowsocks-libev.sh
-	    ./shadowsocks-libev.sh 2>&1 | tee shadowsocks-libev.log
+	wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev.sh
+	chmod +x shadowsocks-libev.sh
+	./shadowsocks-libev.sh 2>&1 | tee shadowsocks-libev.log
 	```
 
 	##### 有多端口需求建议使用Shadowsocks-python
