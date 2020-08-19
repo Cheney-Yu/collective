@@ -269,14 +269,14 @@ lsmod | grep bbr
 
 	##### Usage
 	
-	```bash
-	# for centos
-	bash <(curl -Ls https://github.com/mzz2017/lkl-haproxy/raw/master/lkl-haproxy-centos-nocheckvirt.sh)
-	
-	# for debian
-	bash <(curl -Ls https://github.com/mzz2017/lkl-haproxy/raw/master/lkl-haproxy-debian-nocheckvirt.sh)
-	
-	```
+		```bash
+		# for centos
+		bash <(curl -Ls https://github.com/mzz2017/lkl-haproxy/raw/master/lkl-haproxy-centos-nocheckvirt.sh)
+		
+		# for debian
+		bash <(curl -Ls https://github.com/mzz2017/lkl-haproxy/raw/master/lkl-haproxy-debian-nocheckvirt.sh)
+		
+		```
 
 
     
