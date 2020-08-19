@@ -202,7 +202,7 @@ sysctl net.ipv4.tcp_congestion_control
 lsmod | grep bbr
 ```
 ----
-### OpenVZ Nat
+### OpenVZ NAT
 > Including BBR Plus, V2Ray
 
 #### BBR Plus（OpenVZ）
