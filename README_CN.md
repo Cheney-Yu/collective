@@ -48,7 +48,7 @@
 
 ## 直接键入型使用
 
-### 系统安全
+### **系统安全**
 > Including 修改SSH Port，fail2ban
 
 #### 修改SSH Port
@@ -67,7 +67,7 @@ Port 端口
 其它系统（CentOS）的fail2ban安装和fail2ban管理，请参照[fail2ban](https://github.com/fail2ban/fail2ban)
 
 ----
-### 代理
+### **代理**
 > Including Shadowsocks , V2Ray , Trojan , Trojan-Go, WireGuard
 
 #### Shadowsocks
@@ -144,7 +144,7 @@ chmod +x gost
 ./gost -L 用户名:密码@:端口 socks5+tls://:端口
 ```
 ----
-### 中转（NAT机）
+### **中转(NAT机)**
 > Including gost , ufw , HaProxy
 
 *此部分介绍安装方式*
@@ -179,7 +179,7 @@ apt-get update -y && apt-get install ufw -y
 
 
 ----
-### VPS加速
+### **VPS加速**
 > Including BBR
 
 #### BBR Original
@@ -202,7 +202,7 @@ sysctl net.ipv4.tcp_congestion_control
 lsmod | grep bbr
 ```
 ----
-### OpenVZ NAT
+### **OpenVZ NAT**
 > Including BBR Plus, V2Ray
 
 #### BBR Plus（OpenVZ）
