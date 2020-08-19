@@ -19,14 +19,14 @@ Special Thanks:
     + [Shadowsocks](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#Shadowsocks)
 	+ [V2Ray](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#V2Ray)
 	+ [Trojan](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#Trojan)
-	+ [Trojan-Go](/https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#Trojan-Go)
+	+ [/Trojan-Go](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#Trojan-Go)
 	+ [Wireguard](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#Wireguard)
 	+ [Socks5 with tls(telegram)](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#socks5-with-tlstelegram-代理)
 
 + [中转(NAT)](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#中转nat机)
     + [gost](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#gost)
 	+ [UFW](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#ufw)
-	+ [HaProxy](/https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#haproxy)
+	+ [/HaProxy](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#haproxy)
 
 + [加速](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#VPS加速)
     + [BBR Original(Recommended)](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#bbr-original)
