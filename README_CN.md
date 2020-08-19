@@ -148,13 +148,15 @@
 	考虑到很多商家禁止MTProto的搭建和使用，我们的Telegram代理多采用Socks5代理     
 	考虑到安全性，建议的方式是使用[gost](https://github.com/ginuerzh/gost)搭建带有tls的Socks5代理 
 
-	gost的安装  
+	##### gost的安装
+	先安装wget
 	```bash
 	# Debian和Ubuntu系统下安装wget
 	apt-get update -y && apt-get install wget -y
 	# CentOS系统下安装wget
 	yum update -y && yum install wget -y
 	```
+	再安装gost
 	```bash
 	wget -N --no-check-certificate https://github.com/ginuerzh/gost/releases/download/v2.11.1/gost-linux-amd64-2.11.1.gz && gzip -d gost-linux-amd64-2.11.1.gz
 	mv gost-linux-amd64-2.11.1 gost
@@ -178,13 +180,15 @@
 - #### **gost**
 	[gost脚本地址](https://github.com/ginuerzh/gost) 
 
-	gost的安装     
+	##### gost的安装
+	先安装wget
 	```bash
 	# Debian和Ubuntu系统下安装wget
 	apt-get update -y && apt-get install wget -y
 	# CentOS系统下安装wget
 	yum update -y && yum install wget -y
 	```
+	再安装gost
 	```bash
 	wget -N --no-check-certificate https://github.com/ginuerzh/gost/releases/download/v2.11.1/gost-linux-amd64-2.11.1.gz && gzip -d gost-linux-amd64-2.11.1.gz
 	mv gost-linux-amd64-2.11.1 gost
@@ -250,7 +254,8 @@
 	
 	`lkl` mode via `haproxy`, works for `OpenVZ` virtualization.
 	
-	**NOTICE**: `TUN/TAP` is needed. `256M free memory` is needed.
+	##### NOTICE :
+		`TUN/TAP` is needed. `256M free memory` is needed.
 
 	##### Usage
 	
