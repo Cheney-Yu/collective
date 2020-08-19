@@ -81,7 +81,11 @@ Shadowsocks 采用的是秋水逸冰（@teddysun）的[脚本](https://github.co
 **内存较小的VPS建议使用Shadowsocks-libev脚本**
 **有多端口需求建议使用Shadowsocks-python**
 
-
+#### Socks5 with Tls(Telegram 代理)
+Shadowsocks 采用的是秋水逸冰（@teddysun）的[脚本](https://github.com/teddysun/shadowsocks_install/tree/master)
+**内存空间较为充裕的VPS建议使用Shadowsocks-4in1脚本**
+**内存较小的VPS建议使用Shadowsocks-libev脚本**
+**有多端口需求建议使用Shadowsocks-python**
 
 ### 中转（NAT机）
 > Including gost , ufw , HaProxy
