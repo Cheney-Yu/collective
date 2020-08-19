@@ -261,35 +261,35 @@ lsmod | grep bbr
 
     
 - #### BBR Plus（OpenVZ）
-OpenVZ下的BBR-Plus采用的是mzz2017（@mzz2017）的[OpenVZ下开启BBR Plus的脚本](https://github.com/mzz2017/lkl-haproxy)
+	OpenVZ下的BBR-Plus采用的是mzz2017（@mzz2017）的[OpenVZ下开启BBR Plus的脚本](https://github.com/mzz2017/lkl-haproxy)
+	
+	`lkl` mode via `haproxy`, works for `OpenVZ` virtualization.
+	
+	**NOTICE**: `TUN/TAP` is needed. `256M free memory` is needed.
 
-`lkl` mode via `haproxy`, works for `OpenVZ` virtualization.
-
-**NOTICE**: `TUN/TAP` is needed. `256M free memory` is needed.
-
-##### Usage
-
-```bash
-# for centos
-bash <(curl -Ls https://github.com/mzz2017/lkl-haproxy/raw/master/lkl-haproxy-centos-nocheckvirt.sh)
-
-# for debian
-bash <(curl -Ls https://github.com/mzz2017/lkl-haproxy/raw/master/lkl-haproxy-debian-nocheckvirt.sh)
-
-```
+	##### Usage
+	
+	```bash
+	# for centos
+	bash <(curl -Ls https://github.com/mzz2017/lkl-haproxy/raw/master/lkl-haproxy-centos-nocheckvirt.sh)
+	
+	# for debian
+	bash <(curl -Ls https://github.com/mzz2017/lkl-haproxy/raw/master/lkl-haproxy-debian-nocheckvirt.sh)
+	
+	```
 
 
     
 - #### V2Ray
-OpenVZ下的V2Ray采用的是233boy（@233boy）的[V2Ray一键安装脚本](https://github.com/233boy/v2ray/wiki/V2Ray一键安装脚本)     
-使用 root 用户输入下面命令安装或卸载
-```
-bash <(curl -s -L https://git.io/v2ray.sh)
-```
-> 如果提示 curl: command not found ，那是因为你的 VPS 没装 Curl    
-ubuntu/debian 系统安装 Curl 方法: `apt-get update -y && apt-get install curl -y`    
-centos 系统安装 Curl 方法: `yum update -y && yum install curl -y`    
-安装好 curl 之后就能安装脚本了
-
-备注：安装完成后，输入 v2ray 即可管理 V2Ray     
-如果提示你的系统不支持此脚本，那么请尝试更换系统
+	OpenVZ下的V2Ray采用的是233boy（@233boy）的[V2Ray一键安装脚本](https://github.com/233boy/v2ray/wiki/V2Ray一键安装脚本)     
+	使用 root 用户输入下面命令安装或卸载
+	```
+	bash <(curl -s -L https://git.io/v2ray.sh)
+	```
+	> 如果提示 curl: command not found ，那是因为你的 VPS 没装 Curl    
+	ubuntu/debian 系统安装 Curl 方法: `apt-get update -y && apt-get install curl -y`    
+	centos 系统安装 Curl 方法: `yum update -y && yum install curl -y`    
+	安装好 curl 之后就能安装脚本了
+	
+	备注：安装完成后，输入 v2ray 即可管理 V2Ray     
+	如果提示你的系统不支持此脚本，那么请尝试更换系统
