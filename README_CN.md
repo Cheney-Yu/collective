@@ -9,7 +9,7 @@
 
 ### 已完成
 
-+ 代理
++ 代理(https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#代理)
     + Shadowsocks
 	+ V2Ray
 	+ Trojan
