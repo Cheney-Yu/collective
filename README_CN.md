@@ -105,12 +105,13 @@
 
 	##### 有多端口需求建议使用Shadowsocks-python
 		
-	> Shadowsocks搭建建议[使用AEAD加密](https://zhuanlan.zhihu.com/p/28566058) 如    
-	    AES-128-GCM    
+	Shadowsocks搭建建议[使用AEAD加密](https://zhuanlan.zhihu.com/p/28566058) 如    
+	>    AES-128-GCM    
 	    AES-192-GCM    
 	    AES-256-GCM    
 	    ChaCha20-IETF-Poly1305    
-	    XChaCha20-IETF-Poly1305    
+	    XChaCha20-IETF-Poly1305  
+	
 	CPU设备建议使用AES-XXX-GCM 系列    
 	移动设备建议使用 ChaCha20-IETF-Poly1305 系列    
 	
