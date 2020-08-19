@@ -29,8 +29,9 @@ Special Thanks:
 	+ [HaProxy](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#haproxy)
 
 + [加速](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#VPS加速)
-    + [BBR](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#bbr-original)
-    + [BBR脚本](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#bbr-all)
+    + [BBR Original(Recommended)](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#bbr-original)
+    + [BBR-ALL(teddysun)](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#bbr-all)
+    + [BBR-Plus(chiakge)](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#bbr-chiakge) 
 
 + [OpenVZ NAT](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#openvz-nat)
     + [bbr plus(OpenVZ)](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#bbr-plusopenvz)
@@ -372,7 +373,24 @@ Special Thanks:
 	lsmod | grep bbr
 	```
 	返回值有 `tcp_bbr` 模块即说明 bbr 已启动。注意：并不是所有的 VPS 都会有此返回值，若没有也属正常。    
-
+	
+	
+	
+- #### **BBR(Chiakge)**    
+	##### CentOS 系统  
+	```
+	wget "https://github.com/cx9208/bbrplus/raw/master/ok_bbrplus_centos.sh" && chmod +x ok_bbrplus_centos.sh && ./ok_bbrplus_centos.sh
+	```	
+	安装后，执行`uname -r`，显示`4.14.129-bbrplus`则切换内核成功
+	执行```lsmod | grep bbr```，显示有`bbrplus`则开启成功    
+	
+	##### Linux-NetSpeed
+	```
+	wget -N --no-check-certificate "https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh"
+	chmod +x tcp.sh
+	./tcp.sh
+	```
+	> 注意：在实际运行中发现运行该脚本时会有CPU占用达到10%-20%的情况 原因不明 请视情况选取合适加速方式
 
  ----
 ### **OpenVZ NAT**
