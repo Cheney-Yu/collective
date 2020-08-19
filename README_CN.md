@@ -2,7 +2,7 @@
 
 **记录我在VPS研究过程中所使用到的一些工具**
 
-目标是集成一个install.sh程序，通过选择数字规避输入代码部分（懒）
+目标是集成一个install.sh程序，通过选择数字规避输入代码部分（懒）    
 现阶段先将使用到的工具先记录下来，方便使用
 
 ## 目录
@@ -61,9 +61,9 @@
 Port 端口
 ```
 
-#### fail2ban
-在Debian和Ubuntu系统中 输入`apt-get install fail2ban`即可安装fail2ban
-如果提示`Package not found`,输入`apt update`先更新系统再安装
+#### fail2ban 
+在Debian和Ubuntu系统中 输入`apt-get install fail2ban`即可安装fail2ban       
+如果提示`Package not found`,输入`apt update`先更新系统再安装   
 其它系统（CentOS）的fail2ban安装和fail2ban管理，请参照[fail2ban](https://github.com/fail2ban/fail2ban)
 
 ----
@@ -103,7 +103,7 @@ Debian系统
 
 
 #### Trojan
-Trojan 采用的是Jrohy（@Jrohy）的[带有Web管理界面的脚本](https://github.com/Jrohy/trojan)
+Trojan 采用的是Jrohy（@Jrohy）的[带有Web管理界面的脚本](https://github.com/Jrohy/trojan)    
 需提前将IP地址解析到域名
 ##### 一键脚本安装
 ```bash
@@ -228,9 +228,9 @@ OpenVZ下的V2Ray采用的是233boy（@233boy）的[V2Ray一键安装脚本](htt
 ```
 bash <(curl -s -L https://git.io/v2ray.sh)
 ```
-> 如果提示 curl: command not found ，那是因为你的 VPS 没装 Curl
-ubuntu/debian 系统安装 Curl 方法: `apt-get update -y && apt-get install curl -y`
-centos 系统安装 Curl 方法: `yum update -y && yum install curl -y`
+> 如果提示 curl: command not found ，那是因为你的 VPS 没装 Curl    
+ubuntu/debian 系统安装 Curl 方法: `apt-get update -y && apt-get install curl -y`    
+centos 系统安装 Curl 方法: `yum update -y && yum install curl -y`    
 安装好 curl 之后就能安装脚本了
 
 备注：安装完成后，输入 v2ray 即可管理 V2Ray
