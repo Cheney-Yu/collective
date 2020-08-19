@@ -73,7 +73,8 @@ Port 端口
 
 
 
-[========]
+ [========]
+
 ### **代理**
 > Including Shadowsocks , V2Ray , Trojan , Trojan-Go, WireGuard
 
@@ -170,7 +171,8 @@ chmod +x gost
 
 
 
-[========]
+ [========]
+
 ### **中转(NAT机)**
 > Including gost , ufw , HaProxy
 
@@ -215,7 +217,8 @@ apt-get update -y && apt-get install ufw -y
 
 
 
-[========]
+ [========]
+
 ### **VPS加速**
 > Including BBR
 
@@ -245,7 +248,8 @@ lsmod | grep bbr
 
 
 
-[========]
+ [========]
+
 ### **OpenVZ NAT**
 > Including BBR Plus, V2Ray
 
