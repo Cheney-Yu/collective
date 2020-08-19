@@ -50,6 +50,7 @@
 
 
 ### **系统安全**
+----
 > Including 修改SSH Port，fail2ban
 
 ----
@@ -73,9 +74,10 @@ Port 端口
 
 
 
- [========]
-
+----
+----
 ### **代理**
+----
 > Including Shadowsocks , V2Ray , Trojan , Trojan-Go, WireGuard
 
 ----
@@ -171,9 +173,10 @@ chmod +x gost
 
 
 
- [========]
-
+ ----
+ ----
 ### **中转(NAT机)**
+ ----
 > Including gost , ufw , HaProxy
 
 *此部分介绍安装方式*     
@@ -217,9 +220,11 @@ apt-get update -y && apt-get install ufw -y
 
 
 
- [========]
+ ----
+ ----
 
 ### **VPS加速**
+ ----
 > Including BBR
 
 ----
@@ -248,9 +253,10 @@ lsmod | grep bbr
 
 
 
- [========]
-
+ ----
+ ----
 ### **OpenVZ NAT**
+ ----
 > Including BBR Plus, V2Ray
 
 ----
