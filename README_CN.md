@@ -113,14 +113,14 @@ Special Thanks:
 		```
 		
 	Shadowsocks搭建建议[使用AEAD加密](https://zhuanlan.zhihu.com/p/28566058) 如    
-	>    AES-128-GCM    
-	    AES-192-GCM    
-	    AES-256-GCM    
-	    ChaCha20-IETF-Poly1305    
-	    XChaCha20-IETF-Poly1305  
-	
-	CPU设备建议使用AES-XXX-GCM 系列    
-	移动设备建议使用 ChaCha20-IETF-Poly1305 系列    
+		>    AES-128-GCM    
+		    AES-192-GCM    
+		    AES-256-GCM    
+		    ChaCha20-IETF-Poly1305    
+		    XChaCha20-IETF-Poly1305  
+
+		CPU设备建议使用AES-XXX-GCM 系列    
+		移动设备建议使用 ChaCha20-IETF-Poly1305 系列    
 	
 	
 - #### **V2Ray**    
@@ -166,8 +166,8 @@ Special Thanks:
 		```bash
 		source <(curl -sL https://multi.netlify.app/v2ray.sh) --remove
 		```
-		> 命令行参数
-			```bash
+		命令行参数
+		```bash
 			v2ray [-h|--help] [options]
 			    -h, --help           查看帮助
 			    -v, --version        查看版本号
@@ -191,7 +191,7 @@ Special Thanks:
 			    iptables             iptables流量统计
 			    clean                清理日志
 			    log                  查看日志
-			```
+		```
 
 	
 	
