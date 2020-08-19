@@ -81,7 +81,7 @@
 - #### **Shadowsocks**
 	Shadowsocks 采用的是秋水逸冰（@teddysun）的[Shadowsocks安装脚本](https://github.com/teddysun/shadowsocks_install/tree/master)
 
-	##### 内存空间较为充裕的VPS建议使用Shadowsocks-4in1脚本
+	##### 内存空间较为充裕的VPS建议使用Shadowsocks-4in1脚本[参考](https://github.com/ishen7/Blog/issues/2)
 	```bash
 	wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh
 	chmod +x shadowsocks-all.sh
@@ -104,7 +104,14 @@
 	```
 
 	##### 有多端口需求建议使用Shadowsocks-python
-	
+		
+	> Shadowsocks搭建建议[使用AEAD加密](https://zhuanlan.zhihu.com/p/28566058) 如	
+		AES-128-GCM	
+		AES-192-GCM	
+		AES-256-GCM	
+		ChaCha20-IETF-Poly1305	
+		XChaCha20-IETF-Poly1305	
+	CPU设备建议使用AES-XXX-GCM 系列 移动设备建议使用 ChaCha20-IETF-Poly1305 系列
 	
 	
 - #### **V2Ray**
@@ -180,7 +187,7 @@
 [利用 NAT VPS 进行流量中转](https://blog.chaos.run/dreams/nat-vps-port-forwarding/)
 	
 	
-- #### **gost**
+- #### [**gost**](https://docs.ginuerzh.xyz/gost/)
 	[gost脚本地址](https://github.com/ginuerzh/gost) 
 
 	##### gost的安装
