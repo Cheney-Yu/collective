@@ -81,14 +81,14 @@
 - #### **Shadowsocks**
 	Shadowsocks 采用的是秋水逸冰（@teddysun）的[Shadowsocks安装脚本](https://github.com/teddysun/shadowsocks_install/tree/master)
 
-	**内存空间较为充裕的VPS建议使用Shadowsocks-4in1脚本**
+	##### 内存空间较为充裕的VPS建议使用Shadowsocks-4in1脚本
 	```bash
 	wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh
 	chmod +x shadowsocks-all.sh
 	./shadowsocks-all.sh 2>&1 | tee shadowsocks-all.log
 	```
 
-	**内存较小的VPS建议使用Shadowsocks-libev脚本**
+	##### 内存较小的VPS建议使用Shadowsocks-libev脚本
 
 	Debian系统
 	```bash
@@ -103,14 +103,15 @@
 	    ./shadowsocks-libev.sh 2>&1 | tee shadowsocks-libev.log
 	```
 
-	**有多端口需求建议使用Shadowsocks-python**
+	##### 有多端口需求建议使用Shadowsocks-python
 	
 	
 	
 - #### **V2Ray**
 	
 	
-	
+	```
+	```
 	
 	
 	
@@ -134,19 +135,20 @@
 	
 - #### **Trojan-GO**
 	
-	
-	
-	
+	```
+	```
+		
 - #### **WireGuard**
 	
+	```
+	```
 	
 	
-    
 - #### **Socks5 with Tls(Telegram 代理)**
 	考虑到很多商家禁止MTProto的搭建和使用，我们的Telegram代理多采用Socks5代理     
 	考虑到安全性，建议的方式是使用[gost](https://github.com/ginuerzh/gost)搭建带有tls的Socks5代理 
 
-	gost的安装     
+	gost的安装  
 	```bash
 	# Debian和Ubuntu系统下安装wget
 	apt-get update -y && apt-get install wget -y
