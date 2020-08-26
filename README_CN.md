@@ -330,6 +330,13 @@ Special Thanks:
 	# Debian系统下安装ufw
 	apt-get update -y && apt-get install ufw -y
 	```
+	
+	#<font color="#red">一定要记得开启SSH。 </font>    
+	
+	```bash
+	# 开启SSH
+	ufw allow ssh & ufw allow sftp
+	```
 
 	首先要修改 `/etc/sysctl.conf` 文件：
 	
