@@ -331,7 +331,7 @@ Special Thanks:
 	apt-get update -y && apt-get install ufw -y
 	```
 	
-	# <font color=#A52A2A>一定要记得开启SSH。 </font>    
+	# <font color=`#f03c15`>一定要记得开启SSH。 </font>    
 	
 	```bash
 	# 开启SSH
@@ -515,3 +515,8 @@ Special Thanks:
 	
 	备注：安装完成后，输入 v2ray 即可管理 V2Ray     
 	如果提示你的系统不支持此脚本，那么请尝试更换系统
+
+
+- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `#f03c15` 
+- ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `#c5f015` 
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#1589F0` 
