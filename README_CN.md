@@ -331,10 +331,7 @@ Special Thanks:
 	apt-get update -y && apt-get install ufw -y
 	```
 	
-	#
-	```diff 
-	- 一定要记得开启SSH。 
-	```  
+	# 一定要记得开启SSH。   
 	
 	```bash
 	# 开启SSH
