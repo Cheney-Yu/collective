@@ -2,7 +2,7 @@
 
 **记录我在VPS研究过程中所使用到的一些工具**
 
-目标是集成一个install.sh程序，通过选择数字规避输入代码部分（懒）    
+目标是将来集成一个install.sh程序，通过选择数字规避输入代码部分（懒）    
 现阶段先将使用到的工具先记录下来，方便使用    
 Special Thanks:    
 	teddysun(https://teddysun.com/category/tech)
