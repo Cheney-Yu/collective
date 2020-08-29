@@ -289,6 +289,8 @@ Special Thanks:
 	搭建socks5代理     
 	```bash
 	./gost -L 用户名:密码@:端口 socks5+tls://:端口
+	# 如果发现断开ssh后代理存在断开的现象 添加nohup
+	nohup ./gost -L 用户名:密码@:端口 socks5+tls://:端口
 	```
 	其中，`用户名` `密码`为所搭建的socks5代理的用户名和密码，`端口` 为搭建的socks5代理监听的端口
 	
