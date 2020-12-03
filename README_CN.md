@@ -381,7 +381,7 @@ Special Thanks:
 	
 - #### **debian下的firewalld内网端口转发**
 
-	1. `/etc/sysctl.conf` 添加一句
+	# 1. `/etc/sysctl.conf` 添加一句
 	
 	```bash
 	net.ipv4.ip_forward=1
@@ -401,26 +401,28 @@ Special Thanks:
 	deb https://mirrors.aliyun.com/debian  stable-updates main contrib non-free
 	```
 	保存，然后`apt-get update`进行更新
-	2.运行
+	
+	
+	# 2. 运行
 	```
 	apt-get install firewalld -y
 	```	
-	3.`/etc/firewalld/firewalld.conf `
+	# 3. `/etc/firewalld/firewalld.conf `
 	有個`InvividualCalls=no `把它改成`InvividualCalls=yes `
 	儲存離開
 	```
 	systemctl restart firewalld 
 	```	
-	4. firewall-cmd 启用masquerade
+	# 4. firewall-cmd 启用masquerade
 	```
 	firewall-cmd --permanent --add-masquerade
 	```
-	5. 入口鸡2行代码全部流量（23-65535端口）转发到落地鸡的内网IP：
+	# 5. 入口鸡2行代码全部流量（23-65535端口）转发到落地鸡的内网IP：
 	```
 	firewall-cmd --permanent --add-forward-port=port=23-65535:toport=23-65535:toaddr=落地鸡内网ip:proto=tcp
 	firewall-cmd --permanent --add-forward-port=port=23-65535:toport=23-65535:toaddr=落地鸡内网ip:proto=udp
 	```
-	6. 重新加载配置
+	# 6. 重新加载配置
 	```
 	firewall-cmd --reload
 	```
