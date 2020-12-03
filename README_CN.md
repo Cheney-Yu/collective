@@ -25,7 +25,7 @@ Special Thanks:
 + [中转(NAT)](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#中转nat机)
     + [gost](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#gost)
 	+ [UFW](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#ufw)
-	+ [firewalld转发](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#firewalld-debian)
+	+ [debian下的firewalld内网端口转发](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#firewalld-debian)
 
 + [加速](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#VPS加速)
     + [BBR Original(Recommended)](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#bbr-original)
@@ -379,7 +379,7 @@ Special Thanks:
 	`
 	至此，利用 UFW 设置中转的方法介绍完毕。另可根据使用场景，对目标机的防火墙进行配置，令其只接受来自此 NAT VPS 的流量。
 	
-- #### [**firewalld-debian**]
+- #### [**debian下的firewalld内网端口转发**]
 
 	##### gost的安装
 	1. `/etc/sysctl.conf` 添加一句
