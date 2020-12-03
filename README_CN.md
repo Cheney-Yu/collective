@@ -25,6 +25,7 @@ Special Thanks:
 + [中转(NAT)](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#中转nat机)
     + [gost](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#gost)
 	+ [UFW](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#ufw)
+	+ [firewalld转发](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#firewalld-debian)
 
 + [加速](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#VPS加速)
     + [BBR Original(Recommended)](https://github.com/Cheney-Yu/collective/blob/master/README_CN.md#bbr-original)
@@ -377,6 +378,59 @@ Special Thanks:
 	ufw disable && ufw enable
 	`
 	至此，利用 UFW 设置中转的方法介绍完毕。另可根据使用场景，对目标机的防火墙进行配置，令其只接受来自此 NAT VPS 的流量。
+	
+- #### [**firewalld-debian**]
+
+	##### gost的安装
+	1. `/etc/sysctl.conf` 添加一句
+	
+	```bash
+	net.ipv4.ip_forward=1
+	```
+	
+	ssh窗口输入
+	
+	```bash
+	sysctl -p
+	```
+	
+	1.5 (optional)换源
+	
+	`/etc/apt/sources.list` 注释掉原来的
+	加入以下记录
+	```
+	deb https://mirrors.aliyun.com/debian  stable main contrib non-free
+	deb https://mirrors.aliyun.com/debian  stable-updates main contrib non-free
+	```
+	保存，然后`apt-get update`进行更新
+	
+	2.
+	```
+	apt-get install firewalld -y
+	```
+	
+	3.`/etc/firewalld/firewalld.conf `
+	有個`InvividualCalls=no `把它改成`InvividualCalls=yes `
+	儲存離開
+	```
+	systemctl restart firewalld 
+	```
+	
+	4. firewall-cmd 启用masquerade
+	```
+	firewall-cmd --permanent --add-masquerade
+	```
+
+	5. 入口鸡2行代码全部流量（23-65535端口）转发到落地鸡的内网IP：
+	```
+	firewall-cmd --permanent --add-forward-port=port=23-65535:toport=23-65535:toaddr=落地鸡内网ip:proto=tcp
+	firewall-cmd --permanent --add-forward-port=port=23-65535:toport=23-65535:toaddr=落地鸡内网ip:proto=udp
+	```
+
+	4. 重新加载配置
+	```
+	firewall-cmd --reload
+	```
 	
 	
 - #### **HaProxy**
